@@ -1,17 +1,16 @@
 version: '3.9'
 services:
-    # dot-net-webapi:
-    #     container_name: web-api
-    #     build:
-    #         context: ./CDSurdingApp/CDSurdingAPI
-    #     depends_on:
-    #         - mysql
-    #     volumes:
-    #         - .:/var/www/html/
-    #     ports:
-    #         - 8000:80
+    api:
+        build:
+            context: ./makeitwork
+        depends_on:
+            - mysql
+        ports:
+            - 8000:80
+        restart: always
+        networks:
+            - mnet
     mysql:
-        container_name: mysql
         image: mariadb:10.4.27
         restart: always
         command: --lower_case_table_names=1
@@ -24,6 +23,8 @@ services:
             MYSQL_PASSWORD: Lab2021
         ports:
             - "9906:3306"
+        networks:
+            - mnet
     # maui:
     #     build:
     #         context: ./phpmyadmin
@@ -34,3 +35,5 @@ services:
     #         PMA_HOST: mysql
     #     depends_on:
     #         - mysql
+networks:
+    mnet:
