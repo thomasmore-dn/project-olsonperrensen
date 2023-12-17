@@ -2,7 +2,7 @@ version: '3.9'
 services:
     api:
         build:
-            context: ./makeitwork
+            context: ./TodoApp
         depends_on:
             - mysql
         ports:
