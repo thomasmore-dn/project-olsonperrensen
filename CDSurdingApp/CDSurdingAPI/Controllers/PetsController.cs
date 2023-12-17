@@ -1,38 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CDSurdingAPI.Controllers;
+namespace PetsAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class UsersController : ControllerBase
+public class PetsController : ControllerBase
 {
-    // GET: api/Users
+    // GET: api/Pets
     [HttpGet]
     public IEnumerable<string> Get()
     {
         return new string[] { "value1", "value2" };
     }
 
-    // GET api/Users/{id}
+    // GET api/Pets/{id}
     [HttpGet("{id}")]
     public string Get(int id)
     {
         return "value";
     }
 
-    // POST api/Users
+    // POST api/Pets
     [HttpPost]
     public void Post([FromBody] string value)
     {
     }
 
-    // PUT api/Users/{id}
+    // PUT api/Pets/{id}
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
     }
 
-    // DELETE api/Users/{id}
+    // DELETE api/Pets/{id}
     [HttpDelete("{id}")]
     public void Delete(int id)
     {

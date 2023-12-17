@@ -1,8 +1,11 @@
+using PetsAPI.StartupConfig;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.AddStandardServices();
+builder.AddAuthServices();
+builder.AddHealthCheckServices();
+builder.AddCustomServices();
 
 var app = builder.Build();
 
@@ -11,7 +14,10 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapHealthChecks("/health").AllowAnonymous();
 
 app.MapControllers();
 
