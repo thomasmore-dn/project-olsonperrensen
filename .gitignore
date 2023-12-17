@@ -1,0 +1,75 @@
+# Visual Studio files
+.vscode/
+.vs/
+/*.suo
+/*.user
+/*.userosscache
+/*.sln.docstates
+
+# Rider files
+.idea/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.log
+*.npm-debug.log
+*.yarn-integrity
+
+# Package files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.log
+*.pdb
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependency directories
+node_modules/
+packages/
+
+# Environment files
+.env
+
+# ASP.NET Scaffolding
+bin/
+obj/
+*.csproj.user
+*.iws
+*.pidb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code directories
+.vscode/

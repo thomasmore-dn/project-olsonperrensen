@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+    # dot-net-webapi:
+    #     container_name: web-api
+    #     build:
+    #         context: ./CDSurdingApp/CDSurdingAPI
+    #     depends_on:
+    #         - mysql
+    #     volumes:
+    #         - .:/var/www/html/
+    #     ports:
+    #         - 8000:80
+    mysql:
+        container_name: mysql
+        image: mariadb:10.4.27
+        restart: always
+        command: --lower_case_table_names=1
+        volumes:
+            - ./sql:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_ROOT_PASSWORD: Lab2021
+            MYSQL_DATABASE: pets
+            MYSQL_USER: Webuser
+            MYSQL_PASSWORD: Lab2021
+        ports:
+            - "9906:3306"
+    # maui:
+    #     build:
+    #         context: ./phpmyadmin
+    #     ports:
+    #         - '8080:80'
+    #     restart: always
+    #     environment:
+    #         PMA_HOST: mysql
+    #     depends_on:
+    #         - mysql

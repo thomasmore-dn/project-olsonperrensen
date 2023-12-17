@@ -6,33 +6,33 @@ namespace CDSurdingAPI.Controllers;
 [ApiController]
 public class UsersController : ControllerBase
 {
-    // GET: api/<UsersController>
+    // GET: api/Users
     [HttpGet]
     public IEnumerable<string> Get()
     {
         return new string[] { "value1", "value2" };
     }
 
-    // GET api/<UsersController>/5
+    // GET api/Users/{id}
     [HttpGet("{id}")]
     public string Get(int id)
     {
         return "value";
     }
 
-    // POST api/<UsersController>
+    // POST api/Users
     [HttpPost]
     public void Post([FromBody] string value)
     {
     }
 
-    // PUT api/<UsersController>/5
+    // PUT api/Users/{id}
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
     }
 
-    // DELETE api/<UsersController>/5
+    // DELETE api/Users/{id}
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
