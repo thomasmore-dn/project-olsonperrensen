@@ -6,7 +6,9 @@ services:
         depends_on:
             - mysql
         ports:
-            - 8000:80
+            - 8000:5000
+        environment:
+            DOTNET_URLS: http://+:5000
         restart: always
         networks:
             - mnet
@@ -32,7 +34,7 @@ services:
     #         - '8080:80'
     #     restart: always
     #     environment:
-    #         PMA_HOST: mysql
+    #         DOTNET_URLS: http://+:5000
     #     depends_on:
     #         - mysql
 networks:
